@@ -1,0 +1,11 @@
+@model Mission06_Rogers.Models.Movie
+
+@{
+    ViewData["Title"] = "Confirmation";
+}
+
+<h1>Movie Saved</h1>
+
+<p><strong>@Model.Title</strong> has been added to the collection.</p>
+
+<a asp-controller="Movies" asp-action="Create">Add another movie</a>
