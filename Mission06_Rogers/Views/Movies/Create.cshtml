@@ -8,12 +8,6 @@
 
 <form asp-action="Create" method="post">
     <div class="mb-3">
-        <label asp-for="Category" class="form-label"></label>
-        <input asp-for="Category" class="form-control"/>
-        <span asp-validation-for="Category" class="text-danger"></span>
-    </div>
-
-    <div class="mb-3">
         <label asp-for="Title" class="form-label"></label>
         <input asp-for="Title" class="form-control"/>
         <span asp-validation-for="Title" class="text-danger"></span>
@@ -23,6 +17,7 @@
         <label asp-for="Year" class="form-label"></label>
         <input asp-for="Year" class="form-control"/>
         <span asp-validation-for="Year" class="text-danger"></span>
+        <div class="form-text">Year must be 1888 or later.</div>
     </div>
 
     <div class="mb-3">
@@ -49,18 +44,22 @@
             <option value="false">No</option>
             <option value="true">Yes</option>
         </select>
+        <span asp-validation-for="Edited" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="CopiedToPlex" class="form-label"></label>
+        <select asp-for="CopiedToPlex" class="form-select">
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+        <span asp-validation-for="CopiedToPlex" class="text-danger"></span>
     </div>
 
     <div class="mb-3">
         <label asp-for="LentTo" class="form-label"></label>
         <input asp-for="LentTo" class="form-control"/>
-    </div>
-
-    <div class="mb-3">
-        <label asp-for="Notes" class="form-label"></label>
-        <input asp-for="Notes" class="form-control"/>
-        <span asp-validation-for="Notes" class="text-danger"></span>
-        <div class="form-text">Max 25 characters.</div>
+        <span asp-validation-for="LentTo" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
@@ -69,3 +68,4 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+
